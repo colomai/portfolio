@@ -1,2 +1,6 @@
 class User < ApplicationRecord
-end
+    has_many :shifts, dependent: :destroy
+    has_many :absents, dependent: :destroy
+    has_many :notifications, dependent: :destroy
+  end
+  

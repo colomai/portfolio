@@ -45,3 +45,119 @@ Migrating to CreateNotifications (20240617030201)
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts"[0m
+  [1m[36mAbsent Load (0.2ms)[0m  [1m[34mSELECT "absents".* FROM "absents"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (2.6ms)[0m  [1m[32mINSERT INTO "users" ("number", "image", "email", "password", "role", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["number", 1], ["image", nil], ["email", "admin@example.com"], ["password", "[FILTERED]"], ["role", 1], ["name", "Admin User"], ["created_at", "2024-06-19 14:05:12.893397"], ["updated_at", "2024-06-19 14:05:12.893397"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("number", "image", "email", "password", "role", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["number", 2], ["image", nil], ["email", "employee1@example.com"], ["password", "[FILTERED]"], ["role", 0], ["name", "Employee One"], ["created_at", "2024-06-19 14:05:12.906595"], ["updated_at", "2024-06-19 14:05:12.906595"]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("number", "image", "email", "password", "role", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["number", 3], ["image", nil], ["email", "employee2@example.com"], ["password", "[FILTERED]"], ["role", 0], ["name", "Employee Two"], ["created_at", "2024-06-19 14:05:12.918892"], ["updated_at", "2024-06-19 14:05:12.918892"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("number", "image", "email", "password", "role", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["number", 4], ["image", nil], ["email", "employee3@example.com"], ["password", "[FILTERED]"], ["role", 0], ["name", "Employee Three"], ["created_at", "2024-06-19 14:05:12.930058"], ["updated_at", "2024-06-19 14:05:12.930058"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShift Create (1.5ms)[0m  [1m[32mINSERT INTO "shifts" ("user_id", "date", "start_time", "end_time", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["date", "2024-06-19"], ["start_time", "2000-01-01 09:00:00"], ["end_time", "2000-01-01 17:00:00"], ["status", "pending"], ["created_at", "2024-06-19 14:05:13.085813"], ["updated_at", "2024-06-19 14:05:13.085813"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShift Create (1.3ms)[0m  [1m[32mINSERT INTO "shifts" ("user_id", "date", "start_time", "end_time", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["date", "2024-06-20"], ["start_time", "2000-01-01 10:00:00"], ["end_time", "2000-01-01 18:00:00"], ["status", "approved"], ["created_at", "2024-06-19 14:05:13.104572"], ["updated_at", "2024-06-19 14:05:13.104572"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShift Create (0.9ms)[0m  [1m[32mINSERT INTO "shifts" ("user_id", "date", "start_time", "end_time", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["date", "2024-06-18"], ["start_time", "2000-01-01 08:00:00"], ["end_time", "2000-01-01 16:00:00"], ["status", "rejected"], ["created_at", "2024-06-19 14:05:13.116678"], ["updated_at", "2024-06-19 14:05:13.116678"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mShift Create (1.0ms)[0m  [1m[32mINSERT INTO "shifts" ("user_id", "date", "start_time", "end_time", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 3], ["date", "2024-06-19"], ["start_time", "2000-01-01 09:00:00"], ["end_time", "2000-01-01 17:00:00"], ["status", "pending"], ["created_at", "2024-06-19 14:05:13.127763"], ["updated_at", "2024-06-19 14:05:13.127763"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mShift Create (1.2ms)[0m  [1m[32mINSERT INTO "shifts" ("user_id", "date", "start_time", "end_time", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 3], ["date", "2024-06-20"], ["start_time", "2000-01-01 10:00:00"], ["end_time", "2000-01-01 18:00:00"], ["status", "approved"], ["created_at", "2024-06-19 14:05:13.138466"], ["updated_at", "2024-06-19 14:05:13.138466"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mShift Create (0.9ms)[0m  [1m[32mINSERT INTO "shifts" ("user_id", "date", "start_time", "end_time", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 3], ["date", "2024-06-18"], ["start_time", "2000-01-01 08:00:00"], ["end_time", "2000-01-01 16:00:00"], ["status", "rejected"], ["created_at", "2024-06-19 14:05:13.150248"], ["updated_at", "2024-06-19 14:05:13.150248"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mShift Create (0.9ms)[0m  [1m[32mINSERT INTO "shifts" ("user_id", "date", "start_time", "end_time", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 4], ["date", "2024-06-19"], ["start_time", "2000-01-01 09:00:00"], ["end_time", "2000-01-01 17:00:00"], ["status", "pending"], ["created_at", "2024-06-19 14:05:13.162133"], ["updated_at", "2024-06-19 14:05:13.162133"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mShift Create (1.2ms)[0m  [1m[32mINSERT INTO "shifts" ("user_id", "date", "start_time", "end_time", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 4], ["date", "2024-06-20"], ["start_time", "2000-01-01 10:00:00"], ["end_time", "2000-01-01 18:00:00"], ["status", "approved"], ["created_at", "2024-06-19 14:05:13.172398"], ["updated_at", "2024-06-19 14:05:13.172398"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mShift Create (0.8ms)[0m  [1m[32mINSERT INTO "shifts" ("user_id", "date", "start_time", "end_time", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 4], ["date", "2024-06-18"], ["start_time", "2000-01-01 08:00:00"], ["end_time", "2000-01-01 16:00:00"], ["status", "rejected"], ["created_at", "2024-06-19 14:05:13.183795"], ["updated_at", "2024-06-19 14:05:13.183795"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShift Load (0.1ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAbsent Create (1.4ms)[0m  [1m[32mINSERT INTO "absents" ("user_id", "shift_id", "date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["shift_id", 3], ["date", "2024-06-18"], ["status", "approved"], ["created_at", "2024-06-19 14:05:13.238169"], ["updated_at", "2024-06-19 14:05:13.238169"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mShift Load (0.0ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAbsent Create (1.8ms)[0m  [1m[32mINSERT INTO "absents" ("user_id", "shift_id", "date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 3], ["shift_id", 6], ["date", "2024-06-18"], ["status", "approved"], ["created_at", "2024-06-19 14:05:13.255171"], ["updated_at", "2024-06-19 14:05:13.255171"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mShift Load (0.0ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mAbsent Create (1.3ms)[0m  [1m[32mINSERT INTO "absents" ("user_id", "shift_id", "date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 4], ["shift_id", 9], ["date", "2024-06-18"], ["status", "approved"], ["created_at", "2024-06-19 14:05:13.269902"], ["updated_at", "2024-06-19 14:05:13.269902"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShift Load (0.0ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Create (1.4ms)[0m  [1m[32mINSERT INTO "notifications" ("user_id", "shift_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["shift_id", 1], ["message", "Your shift request for May 1st has been approved. 1 hour ago"], ["created_at", "2024-06-19 14:05:13.316677"], ["updated_at", "2024-06-19 14:05:13.316677"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShift Load (0.0ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mNotification Create (1.0ms)[0m  [1m[32mINSERT INTO "notifications" ("user_id", "shift_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["shift_id", 2], ["message", "Your shift request for May 2nd has been approved. 1 hour ago"], ["created_at", "2024-06-19 14:05:13.329580"], ["updated_at", "2024-06-19 14:05:13.329580"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mShift Load (0.1ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mNotification Create (1.2ms)[0m  [1m[32mINSERT INTO "notifications" ("user_id", "shift_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["shift_id", 4], ["message", "Your shift request for May 1st has been approved. 1 hour ago"], ["created_at", "2024-06-19 14:05:13.342491"], ["updated_at", "2024-06-19 14:05:13.342491"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mShift Load (0.0ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mNotification Create (1.6ms)[0m  [1m[32mINSERT INTO "notifications" ("user_id", "shift_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["shift_id", 5], ["message", "Your shift request for May 2nd has been approved. 1 hour ago"], ["created_at", "2024-06-19 14:05:13.356150"], ["updated_at", "2024-06-19 14:05:13.356150"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mShift Load (0.0ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mNotification Create (1.6ms)[0m  [1m[32mINSERT INTO "notifications" ("user_id", "shift_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["shift_id", 7], ["message", "Your shift request for May 1st has been approved. 1 hour ago"], ["created_at", "2024-06-19 14:05:13.368796"], ["updated_at", "2024-06-19 14:05:13.368796"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mShift Load (0.0ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mNotification Create (1.2ms)[0m  [1m[32mINSERT INTO "notifications" ("user_id", "shift_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["shift_id", 8], ["message", "Your shift request for May 2nd has been approved. 1 hour ago"], ["created_at", "2024-06-19 14:05:13.383764"], ["updated_at", "2024-06-19 14:05:13.383764"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShift Load (0.0ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNotification Create (1.1ms)[0m  [1m[32mINSERT INTO "notifications" ("user_id", "shift_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["shift_id", 1], ["message", "Employee One has requested a shift. 1 hour ago"], ["created_at", "2024-06-19 14:05:13.396944"], ["updated_at", "2024-06-19 14:05:13.396944"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShift Load (0.1ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mNotification Create (1.4ms)[0m  [1m[32mINSERT INTO "notifications" ("user_id", "shift_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["shift_id", 4], ["message", "Employee Two has requested a shift. 1 hour ago"], ["created_at", "2024-06-19 14:05:13.409106"], ["updated_at", "2024-06-19 14:05:13.409106"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShift Load (0.0ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mNotification Create (1.2ms)[0m  [1m[32mINSERT INTO "notifications" ("user_id", "shift_id", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["shift_id", 7], ["message", "Employee Three has requested a shift. 1 hour ago"], ["created_at", "2024-06-19 14:05:13.421063"], ["updated_at", "2024-06-19 14:05:13.421063"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts"[0m
+  [1m[36mAbsent Load (0.2ms)[0m  [1m[34mSELECT "absents".* FROM "absents"[0m
+  [1m[36mNotification Load (0.3ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
