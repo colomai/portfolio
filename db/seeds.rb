@@ -25,20 +25,52 @@ shift2_employee3 = Shift.create!(user_id: employee_user3.id, date: Date.tomorrow
 shift3_employee3 = Shift.create!(user_id: employee_user3.id, date: Date.yesterday, start_time: '08:00', end_time: '16:00', status: 'rejected')
 
 # Absents
-Absent.create!(user_id: employee_user1.id, shift_id: shift3_employee1.id, date: Date.yesterday, status: 'approved')
-Absent.create!(user_id: employee_user2.id, shift_id: shift3_employee2.id, date: Date.yesterday, status: 'approved')
-Absent.create!(user_id: employee_user3.id, shift_id: shift3_employee3.id, date: Date.yesterday, status: 'approved')
+absent1_employee1 = Absent.create!(user_id: employee_user1.id, shift_id: shift3_employee1.id, date: Date.yesterday, status: 'approved')
+absent2_employee1 = Absent.create!(user_id: employee_user1.id, shift_id: shift1_employee1.id, date: Date.today, status: 'pending')
+absent3_employee1 = Absent.create!(user_id: employee_user1.id, shift_id: shift2_employee1.id, date: Date.tomorrow, status: 'rejected')
+
+absent1_employee2 = Absent.create!(user_id: employee_user2.id, shift_id: shift3_employee2.id, date: Date.yesterday, status: 'approved')
+absent2_employee2 = Absent.create!(user_id: employee_user2.id, shift_id: shift1_employee2.id, date: Date.today, status: 'pending')
+absent3_employee2 = Absent.create!(user_id: employee_user2.id, shift_id: shift2_employee2.id, date: Date.tomorrow, status: 'rejected')
+
+absent1_employee3 = Absent.create!(user_id: employee_user3.id, shift_id: shift3_employee3.id, date: Date.yesterday, status: 'approved')
+absent2_employee3 = Absent.create!(user_id: employee_user3.id, shift_id: shift1_employee3.id, date: Date.today, status: 'pending')
+absent3_employee3 = Absent.create!(user_id: employee_user3.id, shift_id: shift2_employee3.id, date: Date.tomorrow, status: 'rejected')
+
 
 # Notifications
-Notification.create!(user_id: employee_user1.id, shift_id: shift1_employee1.id, message: 'Your shift request for May 1st has been approved. 1 hour ago')
-Notification.create!(user_id: employee_user1.id, shift_id: shift2_employee1.id, message: 'Your shift request for May 2nd has been approved. 1 hour ago')
+#従業員
+Notification.create!(user_id: employee_user1.id, shift_id: shift1_employee1.id, message: '5月2日のシフトリクエストは保留中です。1時間前')
+Notification.create!(user_id: employee_user1.id, shift_id: shift2_employee1.id, message: '5月2日のシフトリクエストが承認されました。1時間前')
+Notification.create!(user_id: employee_user1.id, shift_id: shift3_employee1.id, message: '5月2日のシフトリクエストが却下されました。1時間前')
 
-Notification.create!(user_id: employee_user2.id, shift_id: shift1_employee2.id, message: 'Your shift request for May 1st has been approved. 1 hour ago')
-Notification.create!(user_id: employee_user2.id, shift_id: shift2_employee2.id, message: 'Your shift request for May 2nd has been approved. 1 hour ago')
+Notification.create!(user_id: employee_user2.id, shift_id: shift1_employee2.id, message: '5月2日のシフトリクエストは保留中です。1時間前')
+Notification.create!(user_id: employee_user2.id, shift_id: shift2_employee2.id, message: '5月2日のシフトリクエストが承認されました。1時間前')
+Notification.create!(user_id: employee_user2.id, shift_id: shift3_employee2.id, message: '5月2日のシフトリクエストが却下されました。1時間前')
 
-Notification.create!(user_id: employee_user3.id, shift_id: shift1_employee3.id, message: 'Your shift request for May 1st has been approved. 1 hour ago')
-Notification.create!(user_id: employee_user3.id, shift_id: shift2_employee3.id, message: 'Your shift request for May 2nd has been approved. 1 hour ago')
+Notification.create!(user_id: employee_user3.id, shift_id: shift1_employee3.id, message: '5月2日のシフトリクエストは保留中です。1時間前')
+Notification.create!(user_id: employee_user3.id, shift_id: shift2_employee3.id, message: '5月2日のシフトリクエストが承認されました。1時間前')
+Notification.create!(user_id: employee_user3.id, shift_id: shift3_employee3.id, message: '5月2日のシフトリクエストが却下されました。1時間前')
 
-Notification.create!(user_id: admin_user.id, shift_id: shift1_employee1.id, message: 'Employee One has requested a shift. 1 hour ago')
-Notification.create!(user_id: admin_user.id, shift_id: shift1_employee2.id, message: 'Employee Two has requested a shift. 1 hour ago')
-Notification.create!(user_id: admin_user.id, shift_id: shift1_employee3.id, message: 'Employee Three has requested a shift. 1 hour ago')
+
+Notification.create!(user_id: employee_user1.id, shift_id: shift3_employee1.id, message: '5月2日の欠勤申請が承認されました。1時間前')
+Notification.create!(user_id: employee_user1.id, shift_id: shift3_employee1.id, message: '5月2日の欠勤申請が却下されました。1時間前')
+Notification.create!(user_id: employee_user1.id, shift_id: shift3_employee1.id, message: '5月2日の欠勤申請は保留中です。1時間前')
+
+Notification.create!(user_id: employee_user2.id, shift_id: shift3_employee2.id, message: '5月2日の欠勤申請が承認されました。1時間前')
+Notification.create!(user_id: employee_user2.id, shift_id: shift3_employee2.id, message: '5月2日の欠勤申請が却下されました。1時間前')
+Notification.create!(user_id: employee_user2.id, shift_id: shift3_employee2.id, message: '5月2日の欠勤申請は保留中です。1時間前')
+
+Notification.create!(user_id: employee_user3.id, shift_id: shift3_employee3.id, message: '5月2日の欠勤申請が承認されました。1時間前')
+Notification.create!(user_id: employee_user3.id, shift_id: shift3_employee3.id, message: '5月2日の欠勤申請が却下されました。1時間前')
+Notification.create!(user_id: employee_user3.id, shift_id: shift3_employee3.id, message: '5月2日の欠勤申請は保留中です。1時間前')
+
+#管理者
+
+Notification.create!(user_id: admin_user.id, shift_id: shift1_employee1.id, message: '従業員1の5月2日のシフトリクエストを受け取りました。1時間前')
+Notification.create!(user_id: admin_user.id, shift_id: shift1_employee2.id, message: '従業員2の5月2日のシフトリクエストを受け取りました。1時間前')
+Notification.create!(user_id: admin_user.id, shift_id: shift1_employee3.id, message: '従業員3の5月2日のシフトリクエストを受け取りました。1時間前')
+
+Notification.create!(user_id: admin_user.id, shift_id: shift3_employee1.id, message: '従業員1の5月2日の欠勤申請を受け取りました。1時間前')
+Notification.create!(user_id: admin_user.id, shift_id: shift3_employee2.id, message: '従業員2の5月2日の欠勤申請を受け取りました。1時間前')
+Notification.create!(user_id: admin_user.id, shift_id: shift3_employee3.id, message: '従業員3の5月2日の欠勤申請を受け取りました。1時間前')
