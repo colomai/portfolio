@@ -6,7 +6,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
-/tmp
+/tmp/*
 
 # Ignore other unneeded files.
 doc/
@@ -40,4 +40,3 @@ doc/
 # Ignore SQLite database files
 /db/*.sqlite3
 /db/*.sqlite3-journal
-"tmp/cache/bootsnap" 
