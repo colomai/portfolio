@@ -3,4 +3,3 @@ class Shift < ApplicationRecord
   has_one :absent, dependent: :destroy  # 一対一の関係
   has_many :notifications, dependent: :destroy
 end
-  

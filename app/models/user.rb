@@ -3,5 +3,3 @@ class User < ApplicationRecord
   has_many :absents, dependent: :destroy
   has_many :notifications, dependent: :destroy
 end
-      
-
