@@ -6,7 +6,7 @@ class CreateShifts < ActiveRecord::Migration[7.0]
       t.time :start_time, null: false
       t.time :end_time, null: false
       t.string :status, null: false
-      t.timestamps, null: false
+      t.timestamps null: false
     end
   end
 end
