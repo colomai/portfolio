@@ -72,7 +72,8 @@ group :test do
 end
 
 gem 'devise'
-gem 'pry', '~> 0.13.1'
+gem 'pry-rails'
 gem 'pry-byebug'
+gem 'pry-doc'
 
 
