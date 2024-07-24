@@ -24,8 +24,12 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  #ログインした後のページが出来たら、そのURLを後で貼る
   def after_sign_in_path_for(resource)
-    binding.pry
-    root_path
+    if resource.role === 1
+      root_path
+    else
+      root_path
+    end
   end
 end

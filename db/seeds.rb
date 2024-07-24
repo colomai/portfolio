@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Users
-admin_user = User.create!(number: 1, name: 'Admin User', email: 'admin@example.com', password: 'password', role: 1)
-employee_user1 = User.create!(number: 2, name: 'Employee One', email: 'employee1@example.com', password: 'password', role: 0)
+admin_user = User.create!(number: 1, name: 'Admin User', email: 'admin@example.com', password: 'password', role: 1, image: '')
+employee_user1 = User.create!(number: 2, name: 'Employee One', email: 'employee1@example.com', password: 'password', role: 0, image: '')
 
 # Shifts
 shift1_employee1 = Shift.create!(user_id: employee_user1.id, date: Date.today, start_time: '09:00', end_time: '17:00', status: 'pending')
