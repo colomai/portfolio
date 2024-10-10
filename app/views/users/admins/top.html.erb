@@ -1,0 +1,20 @@
+<div class="container d-flex flex-column align-items-center justify-content-center vh-100">
+  <div class="text-center">
+    <header class="mb-3">
+      <% if user_signed_in? %>
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <% end %>
+    </header>
+    <div class="container">
+        <% if flash[:notice] %>
+    <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %>
+    </div>
+        <% end %>
+    <div>
+    <p><%= link_to '申請一覧', root_path %></p>
+    <p><%= link_to '管理者を作成する', root_path %></p>
+    <p><%= link_to '従業員を作成する', root_path %></p>
+    </div>
+  </div>
+</div>

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   get 'users/employees/top', to: 'users/employees#top'
+  get 'users/admins/top', to: 'users/admins#top'
   root "static_pages#home"
 end

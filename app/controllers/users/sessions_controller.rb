@@ -29,10 +29,21 @@ class Users::SessionsController < Devise::SessionsController
     if resource.role === 0
       users_employees_top_path
     else
-      root_path
+      users_admins_top_path
     end
   end
   def after_sign_out_path_for(resource)
     new_user_session_path
+  end
+end
+
+def create
+  super
+  if resource.persisted?
+    if resource.role == 1
+      flash[:notice] = "管理者としてログインしました。"
+    else
+      flash[:notice] = "従業員としてログインしました。"
+    end
   end
 end
