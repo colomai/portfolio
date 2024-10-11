@@ -16,7 +16,6 @@ shift2_employee1 = Shift.create!(user_id: employee_user1.id, date: Date.tomorrow
 shift3_employee1 = Shift.create!(user_id: employee_user1.id, date: Date.yesterday, start_time: '08:00', end_time: '16:00', status: 'rejected')
 shift4_employee1 = Shift.create!(user_id: employee_user1.id, date: Date.today, start_time: '20:00', end_time: '21:00', status: 'approved')
 
-
 # Absents
 absent1_employee1 = Absent.create!(user_id: employee_user1.id, shift_id: shift1_employee1.id, date: Date.today, status: 'pending')
 absent2_employee1 = Absent.create!(user_id: employee_user1.id, shift_id: shift2_employee1.id, date: Date.tomorrow, status: 'rejected')
