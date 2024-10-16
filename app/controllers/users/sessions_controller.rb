@@ -27,9 +27,9 @@ class Users::SessionsController < Devise::SessionsController
   #ログインした後のページが出来たら、そのURLを後で貼る
   def after_sign_in_path_for(resource)
     if resource.role === 0
-      users_employees_top_path
+      employees_top_path
     else
-      users_admins_top_path
+      admins_top_path
     end
   end
   def after_sign_out_path_for(resource)
