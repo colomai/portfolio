@@ -1,4 +1,4 @@
-class Users::EmployeesController < ApplicationController
+class EmployeesController < ApplicationController
     def top      
       @year = params[:year].present? ? params[:year] .to_i : Date.today.year
       @month = params[:month].present? ? params[:month].to_i : Date.today.month
