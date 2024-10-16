@@ -26,10 +26,24 @@ class Users::SessionsController < Devise::SessionsController
   # end
   #ログインした後のページが出来たら、そのURLを後で貼る
   def after_sign_in_path_for(resource)
-    if resource.role === 1
-      root_path
+    if resource.role === 0
+      employees_top_path
     else
-      root_path
+      admins_top_path
+    end
+  end
+  def after_sign_out_path_for(resource)
+    new_user_session_path
+  end
+end
+
+def create
+  super
+  if resource.persisted?
+    if resource.role == 1
+      flash[:notice] = "管理者としてログインしました。"
+    else
+      flash[:notice] = "従業員としてログインしました。"
     end
   end
 end
