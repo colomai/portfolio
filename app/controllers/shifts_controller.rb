@@ -6,8 +6,10 @@ class ShiftsController < ApplicationController
 
     def create
         @shift = Shift.new(shift_params)
+        @shift.user_id = current_user.id
+        @shift.status = "pending"
         if @shift.save
-          redirect_to users_employees_top_path, notice: "シフト申請しました"
+          redirect_to employees_top_path, notice: "シフト申請しました"
         else
           render :new
         end
