@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   get 'employees/top', to: 'employees#top'
   get 'admins/top', to: 'admins#top'
   root "static_pages#home"
+
+  get 'shifts/new', to: 'shifts#new'
+  post 'shifts', to: 'shifts#create'
+  get 'shifts/status/:date', to: 'shifts#status'
 end
