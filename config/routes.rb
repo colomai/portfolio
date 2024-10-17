@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   get 'shifts/new', to: 'shifts#new'
   post 'shifts', to: 'shifts#create'
+  get 'shifts/status/:date', to: 'shifts#status'
 end

@@ -1,7 +1,8 @@
 class ShiftsController < ApplicationController
+  before_action :authenticate_user!, except: [:status]
     def new
         @shift = Shift.new
-    end 
+    end
 
     def create
         @shift = Shift.new(shift_params)
@@ -11,10 +12,14 @@ class ShiftsController < ApplicationController
           render :new
         end
       end
+
+    def status
+        @shift = Shift.find_by(date: params[:date])
+    end
     
       private
     
       def shift_params
-        params.require(:shift).permit(:date, :start_time, :end_time, :user_id)
+        params.require(:shift).permit(:date, :start_time, :end_time)
       end
 end
