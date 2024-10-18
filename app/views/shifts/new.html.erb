@@ -1,20 +1,20 @@
 <%= form_with(model: @shift, local: true) do |form| %>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <%= form.label :date %>
-                <%= form.date_select :date, use_month_numbers: true %>
-                <%= form.label :start_time, '開始時間' %>
-                <%= form.time_select :start_time %>
-                <%= form.label :end_time, '終了時間' %>
-                <%= form.time_select :end_time %>
-                <p>休憩時間60分</p> </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-            <%= form.submit "シフト申請する", class: "btn btn-primary" %>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <%= form.label :date %>
+        <%= form.date_select :date, use_month_numbers: true %>
+        <%= form.label :start_time, '開始時間' %>
+        <%= form.time_select :start_time %>
+        <%= form.label :end_time, '終了時間' %>
+        <%= form.time_select :end_time %>
+        <p>休憩時間60分</p> </div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col">
+      <%= form.submit "シフト申請する", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 <% end %>
