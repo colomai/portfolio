@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'employees/top', to: 'employees#top'
   get 'admins/top', to: 'admins#top'
   root "static_pages#home"
+
+  resources :shifts, only: [:new, :create]
 end
