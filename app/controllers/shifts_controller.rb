@@ -11,7 +11,7 @@ class ShiftsController < ApplicationController
         redirect_to employees_top_path, notice: "シフト申請しました"
       else
         render :new
-        end
+      end
     end
 
     def status
