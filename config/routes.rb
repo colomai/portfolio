@@ -10,7 +10,5 @@ Rails.application.routes.draw do
   get 'admins/top', to: 'admins#top'
   root "static_pages#home"
 
-  get 'shifts/new', to: 'shifts#new'
-  post 'shifts', to: 'shifts#create'
-  get 'shifts/status/:date', to: 'shifts#status'
+  resources :shifts
 end

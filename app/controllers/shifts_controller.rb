@@ -1,5 +1,5 @@
 class ShiftsController < ApplicationController
-  before_action :authenticate_user!, except: [:status]
+  before_action :authenticate_user!, except: [:index]
   def new
     @shift = Shift.new
   end
@@ -14,8 +14,9 @@ class ShiftsController < ApplicationController
     end
   end
 
-  def status
-    @shift = Shift.find_by(date: params[:date])
+  def index
+    date = Date.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
+    @shift = Shift.find_by(date: date)
   end
     
   private
