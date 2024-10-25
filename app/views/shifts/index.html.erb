@@ -1,8 +1,19 @@
-<% if @shift %>
-  <p>シフト日時: <%= @shift.date.strftime("%Y年%m月%d日") %></p>
-  <p>開始時間: <%= @shift.start_time.strftime("%H:%M") %></p>
-  <p>終了時間: <%= @shift.end_time.strftime("%H:%M") %></p>
-  <p>休憩時間: 60分</p>
-<% else %>
-  <p class="alert alert-info">この日のシフトはありません</p>
-<% end %>
+<div class="container text-center">
+  <h1><%= @date %> のシフト</h1>
+
+  <% if @shifts.empty? %>
+    <p>この日のシフトはありません</p>
+  <% else %>
+    <ul>
+      <% @shifts.each do |shift| %>
+        <li>
+        シフト日時: <%= shift.date.strftime("%Y年%m月%d日") %></p>
+        開始時間: <%= shift.start_time.strftime("%H:%M") %></p>
+        終了時間: <%= shift.end_time.strftime("%H:%M") %></p>
+        ステータス: <%= shift.status %>
+        <p>休憩時間: 60分</p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
