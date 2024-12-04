@@ -2,12 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <%= form.label :date %>
-        <%= form.date_select :date, use_month_numbers: true %>
         <%= form.label :start_time, '開始時間' %>
-        <%= form.time_select :start_time %>
+        <%= form.datetime_select :start_time, use_month_numbers: true %>
         <%= form.label :end_time, '終了時間' %>
-        <%= form.time_select :end_time %>
+        <%= form.datetime_select :end_time, use_month_numbers: true%>
         <p>休憩時間60分</p>
       </div>
     </div>

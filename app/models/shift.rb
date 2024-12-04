@@ -3,7 +3,17 @@ class Shift < ApplicationRecord
   has_one :absent, dependent: :destroy  # 一対一の関係
   has_many :notifications, dependent: :destroy
 
-  validates :date, presence: true, format: { with: /\A\d{4}-\d{1,2}-\d{1,2}\z/ }, date: { after_or_equal_to: Date.today }
-  validates :start_time, presence: true, format: { with: /\A\d{2}:\d{2}\z/ }, time: { after: '00:00', before: '24:00' }
-  validates :end_time, presence: true, format: { with: /\A\d{2}:\d{2}\z/ }, time: { after: :start_time, before: '24:00' }
+  validates :start_time, presence: true
+  validates :end_time, presence: true
+  validate :start_finish_check
+  validate :start_check
+
+  def start_finish_check
+    errors.add(:end_time, "は開始時刻より遅い時間を選択してください") if start_time > end_time #開始時間と終了時間の比較
+  end
+
+  def start_check
+    errors.add(:start_time, "は現在の日時より遅い時間を選択してください") if start_time < Time.current #開始時間と現在日時の比較
+  end
+
 end
