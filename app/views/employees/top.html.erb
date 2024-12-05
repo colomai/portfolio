@@ -29,7 +29,7 @@
                 <% (1..@last_day.day).each do |day| %>
                     <% date = @first_day + day - 1 %>
                     <td class="<%= 'today' if date == Date.today %>">
-                    <%= link_to date.day, shifts_path(year: @year, month: @month, day: date.day) %>
+                    <%= date.day %>
                     </td>
                     <% if (day + @first_day_wday) % 7 == 0 %>
                     </tr><tr>
