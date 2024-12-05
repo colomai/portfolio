@@ -11,7 +11,7 @@ class ShiftsController < ApplicationController
     if @shift.save
       redirect_to employees_top_path, notice: "シフト申請しました"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

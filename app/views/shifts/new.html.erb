@@ -1,3 +1,4 @@
+<%= render 'users/shared/error_messages', resource: @shift %>
 <%= form_with(model: @shift, local: true) do |form| %>
   <div class="container">
     <div class="row">
@@ -5,7 +6,7 @@
         <%= form.label :start_time, '開始時間' %>
         <%= form.datetime_select :start_time, use_month_numbers: true %>
         <%= form.label :end_time, '終了時間' %>
-        <%= form.datetime_select :end_time, use_month_numbers: true%>
+        <%= form.datetime_select :end_time, use_month_numbers: true %>
         <p>休憩時間60分</p>
       </div>
     </div>
