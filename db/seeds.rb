@@ -7,14 +7,16 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Users
-admin_user = User.create!(number: 1, name: 'Admin User', email: 'admin@example.com', password: 'password', role: 1, image: '')
-employee_user1 = User.create!(number: 2, name: 'Employee One', email: 'employee1@example.com', password: 'password', role: 0, image: '')
+admin_user = User.create!(number: 1, name: 'Admin User', email: 'admin1@example.com', password: 'Admin123', password_confirmation: 'Admin123',
+role: 1, image: '')
+employee_user1 = User.create!(number: 2, name: 'Employee One', email: 'employee01@example.com', password: 'Emplo123', password_confirmation: 'Emplo123',
+role: 0, image: '')
 
 # Shifts
-shift1_employee1 = Shift.create!(user_id: employee_user1.id, date: Date.today, start_time: '09:00', end_time: '17:00', status: 'pending')
-shift2_employee1 = Shift.create!(user_id: employee_user1.id, date: Date.tomorrow, start_time: '10:00', end_time: '18:00', status: 'approved')
-shift3_employee1 = Shift.create!(user_id: employee_user1.id, date: Date.yesterday, start_time: '08:00', end_time: '16:00', status: 'rejected')
-shift4_employee1 = Shift.create!(user_id: employee_user1.id, date: Date.today, start_time: '20:00', end_time: '21:00', status: 'approved')
+shift1_employee1 = Shift.create!(user_id: employee_user1.id, start_time: '2024-12-01 09:00', end_time: '2024-12-01 17:00', status: 'pending')
+shift2_employee1 = Shift.create!(user_id: employee_user1.id, start_time: '2024-12-01 10:00', end_time: '2024-12-01 18:00', status: 'approved')
+shift3_employee1 = Shift.create!(user_id: employee_user1.id, start_time: '2024-12-01 08:00', end_time: '2024-12-01 16:00', status: 'rejected')
+shift4_employee1 = Shift.create!(user_id: employee_user1.id, start_time: '2024-12-01 20:00', end_time: '2024-12-01 21:00', status: 'approved')
 
 # Absents
 absent1_employee1 = Absent.create!(user_id: employee_user1.id, shift_id: shift1_employee1.id, date: Date.today, status: 'pending')
