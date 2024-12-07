@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Portfolio</title>
+    <title>ポートフォリオ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,14 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <% if current_user.role == 0 %>
+        <%= render 'layouts/employees/header' %>
+      <% else current_user.role == 1 %>
+        <%= render 'layouts/admins/header' %>
+      <% end %>
+    <% end %>
+    
     <div class="container">
     <% if flash[:notice] %>
       <div class="alert alert-success" role="alert">
