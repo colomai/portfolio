@@ -15,8 +15,8 @@ class ShiftsController < ApplicationController
   end
 
   def index
-    @date = Date.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
-    @shifts = Shift.where(date: @date)
+    date = Date.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
+    @shift = Shift.find_by(date: date)
   end
     
   private
