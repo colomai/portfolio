@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   get 'employees/top', to: 'employees#top'
   get 'admins/top', to: 'admins#top'
-  root "static_pages#home"
-
+  get 'employees/:id', to: 'employees#show', as: :employee
+  get 'employees/:id/edit', to: 'employees#edit', as: :edit_employee
+  put 'employees/:id', to: 'employees#update'
   resources :shifts
 end
