@@ -11,18 +11,18 @@
   </head>
 
   <body>
-    <div class="container">
-    <% if flash[:notice] %>
-      <div class="alert alert-success" role="alert">
-        <%= flash[:notice] %>
+  <div class="container">
+    <% [:notice, :alert].each do |key| %>
+     <% if flash[key] %>
+      <div class="alert <%= case key
+                              when :notice then 'alert-success'
+                              when :alert then 'alert-danger'
+                              end %>" role="alert">
+        <%= flash[key] %>
       </div>
     <% end %>
-    <% if flash[:alert] %>
-      <div class="alert alert-success" role="alert">
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
-    </div>
+  <% end %>
+</div>
     <%= yield %>
   </body>
 </html>
