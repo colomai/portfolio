@@ -1,0 +1,12 @@
+ja:
+  datetime:
+    formats:
+      default: '%Y年%m月%d日 %H時%M分'
+  date:
+    order:
+      - :year
+      - :month
+      - :day
+  errors:
+    messages:
+      not_saved: "登録に失敗しました"  
