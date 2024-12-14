@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get 'employees/top', to: 'employees#top'
   get 'admins/top', to: 'admins#top'
   root "static_pages#home"
-
+  get 'admins/shifts', to: 'admins#shifts', as: :admin_shifts
   resources :shifts
 end
