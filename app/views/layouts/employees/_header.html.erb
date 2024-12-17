@@ -1,12 +1,14 @@
 <header class="container">
-  <div class="row align-items-center">
-    <div class="col-md-12">
-      <nav class="nav nav-pills">
-        <li class="nav-item"><%= link_to "ポートフォリオ", employees_top_path, class: "nav-link" %></li>
+  <div class="row">
+    <div class="col-md-6">
+      <%= link_to "ポートフォリオ", employees_top_path, class: "nav-link" %>
+    </div>
+    <div class="col-md-6">
+      <ul class="nav nav-pills pull-right">
         <li class="nav-item"><%= link_to "トップ", employees_top_path, class: "nav-link" %></li>
         <li class="nav-item"><%= link_to "シフト申請", new_shift_path, class: "nav-link" %></li>
         <li class="nav-item"><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
-      </nav>
+      </ul>
     </div>
   </div>
 </header>
