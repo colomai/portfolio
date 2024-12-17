@@ -1,6 +1,6 @@
 <div class="container text-center">
   <h2>プロフィール編集</h2>
-  <%= render 'users/shared/error_messages', resource: @user %>
+  <%= render 'shared/error_messages', resource: @user %>
   <%= form_with(model: @user, url: edit_employee_path(@user), method: :put, local: true) do |form| %>
     <div class="form-group">
       <%= form.label :image, "プロフィール画像" %>

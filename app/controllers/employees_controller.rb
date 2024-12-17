@@ -1,7 +1,7 @@
 class EmployeesController < ApplicationController
   before_action :authenticate_user!
 
-  def top      
+  def index      
     @year = params[:year].present? ? params[:year] .to_i : Date.today.year
     @month = params[:month].present? ? params[:month].to_i : Date.today.month
       
