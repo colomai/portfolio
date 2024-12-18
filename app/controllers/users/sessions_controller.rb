@@ -27,8 +27,8 @@ class Users::SessionsController < Devise::SessionsController
   #ログインした後のページが出来たら、そのURLを後で貼る
   def after_sign_in_path_for(resource)
     if resource.role === 0
-      employees_top_path
-    elsif resource.role === 1
+      employees_path
+    elseif resource.role === 1
       admins_top_path
     else
       render :new, status: :unprocessable_entity
