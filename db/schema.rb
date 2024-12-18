@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_21_232417) do
+ActiveRecord::Schema[7.0].define(version: 2024_12_11_104258) do
   create_table "absents", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "shift_id", null: false
@@ -34,9 +34,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_21_232417) do
 
   create_table "shifts", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.date "date", null: false
-    t.time "start_time", null: false
-    t.time "end_time", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_21_232417) do
 
   create_table "users", force: :cascade do |t|
     t.integer "number", null: false
-    t.string "image", null: false
+    t.string "image"
     t.string "email", null: false
     t.integer "role", null: false
     t.string "name", null: false
@@ -55,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_21_232417) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

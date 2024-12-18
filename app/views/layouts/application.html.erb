@@ -17,11 +17,13 @@
       <% end %>
     <% end %>
     <div class="container">
-    <% if flash[:notice] %>
-      <div class="alert alert-success" role="alert">
-      <%= flash[:notice] %>
-      </div>
-    <% end %>
+      <% [:notice, :alert].each do |key| %>
+        <% if flash[key] %>
+          <div class="alert <%= key == :notice ? 'alert-success' : 'alert-danger' %>" role="alert">
+            <%= flash[key] %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
     <%= yield %>
   </body>
