@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  get 'employees/top', to: 'employees#top'
-  get 'admins/top', to: 'admins#top'
   root "static_pages#home"
-  get 'admins/shifts', to: 'admins#shifts', as: :admin_shifts
+  namespace :admin do
+    resources :shifts
+  end
+  resources :employees
+  resources :admins
   resources :shifts
 end

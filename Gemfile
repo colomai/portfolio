@@ -77,3 +77,4 @@ gem 'pry-byebug'
 gem 'pry-doc'
 gem 'bootstrap-sass'
 gem "sassc-rails"
+gem 'kaminari'

@@ -1,9 +1,6 @@
 class AdminsController < ApplicationController
   before_action :authenticate_user!
 
-  def top
+  def index
   end
-    def shifts
-      @shifts = Shift.all
-    end
 end
