@@ -9,7 +9,7 @@ class ShiftsController < ApplicationController
     @shift.status = "pending"
 
     if @shift.save
-      redirect_to employees_top_path, notice: "シフト申請しました"
+      redirect_to employee_path(current_user), notice: "シフト申請しました"
     else
       render :new, status: :unprocessable_entity
     end

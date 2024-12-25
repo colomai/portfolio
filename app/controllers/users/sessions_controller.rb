@@ -28,8 +28,8 @@ class Users::SessionsController < Devise::SessionsController
   def after_sign_in_path_for(resource)
     if resource.role === 0
       employees_path
-    elseif resource.role === 1
-      admins_top_path
+    elsif resource.role === 1
+      admins_path
     else
       render :new, status: :unprocessable_entity
     end

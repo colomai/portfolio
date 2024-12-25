@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+    <%= form_with url: admin_shifts_path, local: true, method: :get do |form| %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">社員番号</span>
+        </div>
+        <%= form.text_field :number, placeholder: "", class: "form-control" %>
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="submit">検索</button>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  <% if @user.present? %>
+    <h2><%= @user.name %> さんのシフト一覧</h2>
+      <% if @shifts.blank? %>
+        <p>シフトはありません</p>
+      <% else %>
+        <table class="table">
+          <tbody>
+            <% @shifts.each do |shift| %>
+              <tr>
+                <td><%= shift.start_time.strftime("%Y年%m月%d日") %></td>
+                <td><%= shift.start_time.strftime("%H:%M") %></td>
+                <td>ー</td>
+                <td><%= shift.end_time.strftime("%H:%M") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= paginate @shifts %>
+    <% end %>
+  <% else %>
+    <p>社員番号を入力して検索ボタンを押してください。</p>  
+  <% end %>
+</div>
