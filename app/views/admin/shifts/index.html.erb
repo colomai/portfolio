@@ -28,6 +28,22 @@
                 <td><%= shift.start_time.strftime("%H:%M") %></td>
                 <td>ー</td>
                 <td><%= shift.end_time.strftime("%H:%M") %></td>
+                <td>
+                  <% if shift.status == "pending" %>
+                    <%= form_with model: shift, url: admin_shift_path(shift, number: params[:number]), local: true, method: :patch do |f| %>
+                      <%= f.hidden_field :status, value: "approved" %>
+                      <%= f.submit "承認", class: "btn btn-success" %>
+                    <% end %>
+                    <%= form_with model: shift, url: admin_shift_path(shift, number: params[:number]), local: true, method: :patch do |f| %>
+                      <%= f.hidden_field :status, value: "rejected" %>
+                      <%= f.submit "却下", class: "btn btn-danger" %>
+                    <% end %>
+                <% elsif shift.status == "approved" %>
+                  承認済み
+                <% elsif shift.status == "rejected" %>
+                  却下済み
+                <% end %>
+                </td>
               </tr>
             <% end %>
           </tbody>
