@@ -17,17 +17,22 @@
 
   <% if @user.present? %>
     <h2><%= @user.name %> さんのシフト一覧</h2>
-    <table class="table">
-      <tbody>
-        <% @shifts.each do |shift| %>
-          <tr>
-            <td><%= shift.start_time.strftime("%Y年%m月%d日") %></td>
-            <td><%= shift.start_time.strftime("%H:%M") %></td>
-            <td><%= shift.end_time.strftime("%H:%M") %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <%= paginate @shifts %>
+      <% if @shifts.blank? %>
+        <p>シフトはありません</p>
+      <% else %>
+        <table class="table">
+          <tbody>
+            <% @shifts.each do |shift| %>
+              <tr>
+                <td><%= shift.start_time.strftime("%Y年%m月%d日") %></td>
+                <td><%= shift.start_time.strftime("%H:%M") %></td>
+                <td>ー</td>
+                <td><%= shift.end_time.strftime("%H:%M") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= paginate @shifts %>
+    <% end %>
   <% end %>
 </div>
