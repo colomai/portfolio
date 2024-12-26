@@ -6,7 +6,7 @@ class Shift < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
   validate :start_finish_check
-  validate :start_check
+  validate :start_check, on: :create
 
   def start_finish_check
     errors.add(:end_time, "は開始時刻より遅い時間を選択してください") if start_time > end_time #開始時間と終了時間の比較

@@ -14,6 +14,8 @@
     <% if user_signed_in? %>
       <% if current_user.role == 0 %>
         <%= render 'layouts/employees/header' %>
+      <% else %>
+        <%= render 'layouts/admins/header' %>
       <% end %>
     <% end %>
     <div class="container">
