@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-4">
-    <%= form_with url: admin_shifts_path, local: true, method: :get do |form| %>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text">社員番号</span>
+      <%= form_with url: admin_shifts_path, local: true, method: :get do |form| %>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">社員番号</span>
+          </div>
+          <%= form.text_field :number, placeholder: "", class: "form-control" %>
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">検索</button>
+          </div>
         </div>
-        <%= form.text_field :number, placeholder: "", class: "form-control" %>
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="submit">検索</button>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
     </div>
   </div>
 
@@ -38,17 +38,17 @@
                       <%= f.hidden_field :status, value: "rejected" %>
                       <%= f.submit "却下", class: "btn btn-danger" %>
                     <% end %>
-                <% elsif shift.status == "approved" %>
-                  承認済み
-                <% elsif shift.status == "rejected" %>
-                  却下済み
-                <% end %>
+                  <% elsif shift.status == "approved" %>
+                    承認済み
+                  <% elsif shift.status == "rejected" %>
+                    却下済み
+                  <% end %>
                 </td>
               </tr>
             <% end %>
           </tbody>
         </table>
         <%= paginate @shifts %>
-    <% end %>
+      <% end %>
   <% end %>
 </div>
