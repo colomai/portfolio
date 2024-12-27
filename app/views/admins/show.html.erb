@@ -1,0 +1,13 @@
+<div class="container text-center">
+  <h2>プロフィール</h2>
+  <div class="profile-image">
+    <% if @user.image.present? %>
+      <%= image_tag @user.image.url, alt: "プロフィール画像", class: "img-thumbnail" %>
+    <% else %>
+      <p>画像が登録されていません</p>
+    <% end %>
+  </div>
+  <p><strong>名前:</strong> <%= @user.name %></p>
+  <p><strong>メールアドレス:</strong> <%= @user.email %></p>
+  <%= link_to "編集する", edit_admin_path(@user) %>
+</div>
