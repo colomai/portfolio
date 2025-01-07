@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_12_11_104258) do
+ActiveRecord::Schema[7.0].define(version: 2024_12_30_141108) do
   create_table "absents", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "shift_id", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_12_11_104258) do
     t.integer "number", null: false
     t.string "image"
     t.string "email", null: false
-    t.integer "role", null: false
+    t.integer "role", default: 0, null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

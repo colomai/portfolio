@@ -11,4 +11,5 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 8 }, format: { with: /\A[a-zA-Z0-9_]{8,}\z/ }
   validates :name, presence: true, length: { maximum: 20 }
   validates :number, presence: true, numericality: { only_integer: true }
+  validates :role, inclusion: { in: [0, 1] }
 end
