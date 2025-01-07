@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :authenticate_admin!
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -8,6 +9,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def new
   #   super
   # end
+  def new
+    @role = params[:role]
+    super # Deviseのnewアクションを実行
+  end
 
   # POST /resource
   # def create
@@ -49,14 +54,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def configure_account_update_params
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
   # end
+  protected
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    admins_path
+  end
+
+  def authenticate_admin!
+    unless current_user&.role == 1 # roleが1（管理者）の場合のみ通過
+      redirect_to new_user_session_path, alert: '管理者権限が必要です。'
+    end
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
-  # end
+  # end    
 end
