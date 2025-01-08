@@ -10,7 +10,7 @@ https://whimsical.com/AamfMMoptwo1ct5AavnkJf
 
 <ワイヤーフレーム>
 
-<img width="400" alt="スクリーンショット 2025-01-08 14 42 25" src="https://github.com/user-attachments/assets/49078a15-764a-4fbe-9867-f989d5d83782" />
+<img width="500" alt="スクリーンショット 2025-01-08 14 42 25" src="https://github.com/user-attachments/assets/49078a15-764a-4fbe-9867-f989d5d83782" />
 
 
 https://whimsical.com/CeeCYhRup5MfEaqWsYG4W5
