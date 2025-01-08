@@ -9,7 +9,7 @@ https://whimsical.com/AamfMMoptwo1ct5AavnkJf
 
 <ワイヤーフレーム>
 
-https://whimsical.com/zmtF9M3Yz5cjmV7zFzBfv
+https://whimsical.com/CeeCYhRup5MfEaqWsYG4W5
 
 <ポートフォリオの各機能、ページごとの操作>
 
