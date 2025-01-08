@@ -77,22 +77,3 @@ https://github.com/user-attachments/assets/d01883bb-2e80-484f-a405-e894abe26442
 
 https://github.com/user-attachments/assets/86de9ef5-868d-49f5-bf20-ab027afe791d
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
