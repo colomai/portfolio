@@ -1,13 +1,17 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このREADMEにはアプリケーションの詳細が記述されています
 
 <ER図>
+
+<img width="655" alt="スクリーンショット 2025-01-08 14 40 07" src="https://github.com/user-attachments/assets/3764b45c-77a4-46e0-88a2-f130f978d94a" />
+
 
 https://whimsical.com/AamfMMoptwo1ct5AavnkJf
 
 <ワイヤーフレーム>
+
+<img width="1036" alt="スクリーンショット 2025-01-08 14 42 25" src="https://github.com/user-attachments/assets/49078a15-764a-4fbe-9867-f989d5d83782" />
+
 
 https://whimsical.com/CeeCYhRup5MfEaqWsYG4W5
 
