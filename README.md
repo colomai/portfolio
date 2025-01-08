@@ -3,6 +3,16 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+<ER図>
+
+https://whimsical.com/AamfMMoptwo1ct5AavnkJf
+
+<ワイヤーフレーム>
+
+https://whimsical.com/zmtF9M3Yz5cjmV7zFzBfv
+
+<ポートフォリオの各機能、ページごとの操作>
+
 従業員ログイン機能
 
 https://github.com/user-attachments/assets/f6b3ffb9-bba3-43dd-9381-81ca4166a87b
