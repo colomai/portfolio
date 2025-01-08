@@ -13,13 +13,27 @@ https://github.com/user-attachments/assets/4e6316f8-bb55-44a2-b033-5baa96078870
 
 現在の日時(1/8 11:40)より前の時間でシフト申請をした場合
 
-
 https://github.com/user-attachments/assets/7c4ed3ba-887c-45b2-a580-eeeccae9b0be
 
 開始時間が終了時間より遅い時間でシフト申請した場合
 
-
 https://github.com/user-attachments/assets/5b3a6b05-e128-4daa-9e7d-e16106183817
+
+シフト申請成功時
+
+https://github.com/user-attachments/assets/02b0d5f5-e46d-4d6a-9b55-5c19b08f8e53
+
+マイページと編集ページを開く
+
+https://github.com/user-attachments/assets/93e56e63-8a7e-45d5-b91e-525f4d8e70ee
+
+ログインページでのバリデーションエラー時のメッセージ 
+
+https://github.com/user-attachments/assets/6f55f5b6-fdd5-4526-a5a2-909bab8f702b
+
+管理者ログイン機能
+
+https://github.com/user-attachments/assets/b55a78f5-770b-4b1e-b3fc-aed089b77c74
 
 
 
