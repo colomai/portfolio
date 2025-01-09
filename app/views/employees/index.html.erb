@@ -1,39 +1,41 @@
-    <div class="row">
-      <div class="col-md-12">
-        <div class="calendar">
-          <div class="calendar-header">
-            <span class="year"> <%= @year %> </span>年 <span class="month"> <%= @month %> </span>月
-          </div>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>日</th>
-                <th>月</th>
-                <th>火</th>
-                <th>水</th>
-                <th>木</th>
-                <th>金</th>
-                <th>土</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <% (0...@first_day_wday).each do %>
-                    <td></td>
-                <% end %>
-                <% (1..@last_day.day).each do |day| %>
-                    <% date = @first_day + day - 1 %>
-                    <td class="<%= 'today' if date == Date.today %>">
-                    <%= link_to date.day, shifts_path(year: @year, month: @month, day: date.day) %>
-                    </td>
-                    <% if (day + @first_day_wday) % 7 == 0 %>
-                    </tr><tr>
-                    <% end %>
-                <% end %>
-                </tr>
-            </tbody>
-          </table>
-        </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="calendar">
+      <div class="calendar-header">
+        <%= form_tag employees_path, method: :get do %>
+          <%= select_tag :year, options_for_select((2020..2030).to_a, @year), onchange: "this.form.submit();" %> 年
+          <%= select_tag :month, options_for_select((1..12).to_a, @month), onchange: "this.form.submit();" %> 月
+        <% end %>
       </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th>土</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% (0...@first_day_wday).each do %>
+              <td></td>
+            <% end %>
+            <% (1..@last_day.day).each do |day| %>
+              <% date = @first_day + day - 1 %>
+              <td class="<%= 'today' if date == Date.today %>">
+                <%= link_to date.day, shifts_path(year: date.year, month: date.month, day: date.day) %>
+              </td>
+              <% if (day + @first_day_wday) % 7 == 0 %>
+                </tr><tr>
+              <% end %>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
