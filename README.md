@@ -57,4 +57,7 @@ https://github.com/user-attachments/assets/de41d81d-db32-4674-899f-9aa88b9c71bd
 
 管理者のマイページと編集ページを開く
 
+https://github.com/user-attachments/assets/c3cfa0c8-caf5-4b59-8989-29efce8ca340
+
+
 
