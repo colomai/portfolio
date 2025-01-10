@@ -21,10 +21,12 @@ https://whimsical.com/CeeCYhRup5MfEaqWsYG4W5
 
 https://github.com/user-attachments/assets/f6b3ffb9-bba3-43dd-9381-81ca4166a87b
 
-カレンダーページの年月をプルダウンで選択し、それに対応するURLに遷移
+カレンダーページの年月をプルダウンで選択し、それに対応するURLに遷移(デフォルトURLは撮影時の2025年1月)
+
+https://github.com/user-attachments/assets/e566802c-ad15-4526-953d-98e038563d4f
 
 
-現在の日時(1/8 11:40)より前の時間でシフト申請をした場合
+撮影時の日時(1/8 11:40)より前の時間でシフト申請をした場合
 
 https://github.com/user-attachments/assets/7c4ed3ba-887c-45b2-a580-eeeccae9b0be
 
