@@ -26,7 +26,7 @@ https://github.com/user-attachments/assets/f6b3ffb9-bba3-43dd-9381-81ca4166a87b
 https://github.com/user-attachments/assets/e566802c-ad15-4526-953d-98e038563d4f
 
 
-撮影時の日時(1/8 11:40)より前の時間でシフト申請をした場合
+撮影時の日時(2025年1月8日　11:40)より前の時間でシフト申請をした場合
 
 https://github.com/user-attachments/assets/7c4ed3ba-887c-45b2-a580-eeeccae9b0be
 
@@ -41,7 +41,6 @@ https://github.com/user-attachments/assets/02b0d5f5-e46d-4d6a-9b55-5c19b08f8e53
 従業員のマイページと編集ページを開く
 
 https://github.com/user-attachments/assets/93e56e63-8a7e-45d5-b91e-525f4d8e70ee
-
 
 管理者ログイン機能
 
