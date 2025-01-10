@@ -41,21 +41,10 @@ https://github.com/user-attachments/assets/02b0d5f5-e46d-4d6a-9b55-5c19b08f8e53
 
 https://github.com/user-attachments/assets/93e56e63-8a7e-45d5-b91e-525f4d8e70ee
 
-ログインページでのバリデーションエラー時のメッセージ 
-
-https://github.com/user-attachments/assets/6f55f5b6-fdd5-4526-a5a2-909bab8f702b
 
 管理者ログイン機能
 
 https://github.com/user-attachments/assets/b55a78f5-770b-4b1e-b3fc-aed089b77c74
-
-管理者トップページから申請一覧ページへの遷移
-
-https://github.com/user-attachments/assets/0f8607b6-03cb-41cc-84ce-aaef0310872a
-
-ユーザーのシフト申請一覧を表示
-
-https://github.com/user-attachments/assets/b00618fd-069e-44f3-8b2b-c4b049a16648
 
 ユーザーのシフトの承認却下機能(承認ボタンのみ)
 
@@ -65,15 +54,4 @@ https://github.com/user-attachments/assets/1df9569e-8f86-4a39-b5a5-6d0d2caad3a0
 
 https://github.com/user-attachments/assets/de41d81d-db32-4674-899f-9aa88b9c71bd
 
-ユーザーにシフトがない場合の表示
-
-https://github.com/user-attachments/assets/22c947de-dc87-4baa-9215-6735b0014c32
-
-検索したユーザー番号が存在しない場合の表示
-
-https://github.com/user-attachments/assets/d01883bb-2e80-484f-a405-e894abe26442
-
-ログアウト機能
-
-https://github.com/user-attachments/assets/86de9ef5-868d-49f5-bf20-ab027afe791d
 
