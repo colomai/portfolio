@@ -38,7 +38,7 @@ https://github.com/user-attachments/assets/5b3a6b05-e128-4daa-9e7d-e16106183817
 
 https://github.com/user-attachments/assets/02b0d5f5-e46d-4d6a-9b55-5c19b08f8e53
 
-マイページと編集ページを開く
+従業員のマイページと編集ページを開く
 
 https://github.com/user-attachments/assets/93e56e63-8a7e-45d5-b91e-525f4d8e70ee
 
@@ -54,5 +54,7 @@ https://github.com/user-attachments/assets/1df9569e-8f86-4a39-b5a5-6d0d2caad3a0
 ユーザーのシフト一覧のページネーション
 
 https://github.com/user-attachments/assets/de41d81d-db32-4674-899f-9aa88b9c71bd
+
+管理者のマイページと編集ページを開く
 
 
