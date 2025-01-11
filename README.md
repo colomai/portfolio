@@ -15,7 +15,7 @@ https://whimsical.com/AamfMMoptwo1ct5AavnkJf
 
 https://whimsical.com/CeeCYhRup5MfEaqWsYG4W5
 
-<ポートフォリオの各機能、ページごとの操作>
+<ポートフォリオの主な機能、ページごとの操作>
 
 従業員ログイン機能
 
