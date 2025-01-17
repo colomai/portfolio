@@ -58,5 +58,9 @@ https://github.com/user-attachments/assets/de41d81d-db32-4674-899f-9aa88b9c71bd
 
 https://github.com/user-attachments/assets/c3cfa0c8-caf5-4b59-8989-29efce8ca340
 
+ポートフォリオで使ったコマンド、gitの操作、コンフリクト解消、deviseやコマンドのメモ
+
+https://www.notion.so/Portfolio-06fdf38f2dd241a994692f0ba024cf05?pvs=4
+
 
 
